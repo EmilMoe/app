@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+if php artisan list | grep asset-cdn
+then
+  php artisan asset-cdn:push
+fi
+
+php artisan migrate --force
+php artisan db:seed --force
