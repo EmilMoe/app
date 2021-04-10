@@ -1,10 +1,6 @@
 FROM cloudmonitor/laravel
 
-ARG TOKEN=
-ARG REPO=
-ARG BRANCH=master
-
-RUN git clone --progress https://x-access-token:${TOKEN}@github.com/${REPO} -b ${BRANCH} .
+RUN git clone --progress https://x-access-token:${CI_DEPLOY_PASSWORD}@gitlab.com/${CI_PROJECT_DIR} -b ${CI_COMMIT_BRANCH} .
 RUN chmod 777 -R /var/www/html/bootstrap/cache /var/www/html/storage
 
 # Composer
