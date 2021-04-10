@@ -1,8 +1,8 @@
 FROM cloudmonitor/laravel
 
-ENV TOKEN=
-ENV REPO=
-ENV BRANCH=master
+ARG TOKEN=
+ARG REPO=
+ARG BRANCH=master
 
 RUN git clone --progress https://x-access-token:${TOKEN}@github.com/${REPO} -b ${BRANCH} .
 RUN chmod 777 -R /var/www/html/bootstrap/cache /var/www/html/storage
