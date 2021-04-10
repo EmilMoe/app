@@ -11,7 +11,6 @@ RUN chmod 777 -R /var/www/html/bootstrap/cache /var/www/html/storage
 RUN mkdir -p /tmp/composer && cp /var/www/html/composer.* /tmp/composer/
 WORKDIR /tmp/composer
 RUN composer install --no-dev --no-autoloader --ignore-platform-reqs --no-interaction --no-plugins --no-scripts --prefer-dist --verbose
-RUN ls -lah
 RUN cp -r /tmp/composer/vendor /var/www/html/vendor
 WORKDIR /var/www/html
 RUN composer dump-autoload --optimize
