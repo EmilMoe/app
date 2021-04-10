@@ -3,19 +3,6 @@ FROM cloudmonitor/laravel
 ENV TOKEN=
 ENV REPO=
 ENV BRANCH=master
-ENV APP_KEY=
-ENV APP_NAME=
-ENV APP_URL=
-ENV DB_HOST=
-ENV DB_PASSWORD=
-ENV DB_DATABASE=
-ENV DB_USERNAME=
-ENV S3_ACCESS_KEY_ID=
-ENV S3_SECRET_ACCESS_KEY=
-ENV CASHIER_PAYMENT_NOTIFICATION=
-ENV STRIPE_KEY=
-ENV STRIPE_SECRET=
-ENV STRIPE_PRODUCT=
 
 RUN git clone --progress https://x-access-token:${TOKEN}@github.com/${REPO} -b ${BRANCH} .
 RUN chmod 777 -R /var/www/html/bootstrap/cache /var/www/html/storage
